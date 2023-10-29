@@ -17,7 +17,7 @@
 
 #primeraSeccion {
     background-image: linear-gradient(rgba(3, 3, 27, 0.171), rgba(17, 17, 15, 0.377)),
-    url("/imagenes/ba1.jpg");
+    url("../imagenes/ba1.jpg");
     height: 800px;
     padding-right: 100px;
     padding-top: 200px;
