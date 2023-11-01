@@ -1,30 +1,24 @@
-
-
 //--> Le pongo 1 por defecto a la cantidad <--//
 
-document.addEventListener("DOMContentLoaded", function() 
-{
-  const inputCant = document.getElementById('inputCant');
-  inputCant.value = '1';
+document.addEventListener("DOMContentLoaded", function () {
+  const inputCant = document.getElementById("inputCant");
+  inputCant.value = "1";
 });
 
 //--> Cuando abro el documento hace foco en el primer input de nombre <--//
 
-document.addEventListener("DOMContentLoaded", function() {
-  
-  const inputName = document.getElementById('inputName');
+document.addEventListener("DOMContentLoaded", function () {
+  const inputName = document.getElementById("inputName");
 
   inputName.focus();
 });
 
 //--> No dejo que se carguen datos que no sean numeros en la cantidad <--//
 
+document.addEventListener("DOMContentLoaded", function () {
+  const inputCant = document.getElementById("inputCant");
 
-document.addEventListener("DOMContentLoaded", function() 
-{
-  const inputCant = document.getElementById('inputCant');
-
-  inputCant.addEventListener('input', function(event) {
+  inputCant.addEventListener("input", function (event) {
     const inputValue = inputCant.value;
 
     if (!/^\d*$/.test(inputValue)) {
@@ -33,19 +27,17 @@ document.addEventListener("DOMContentLoaded", function()
   });
 });
 
-
 //--> Funcion para calcular total <--//
 
 function calcularTotal() {
-
   var categoria = document.getElementById("inputCategory").value;
 
-  var cantidad = document.getElementById("inputCant").value || 0; 
+  var cantidad = document.getElementById("inputCant").value || 0;
 
   var descuentos = {
-    Estudiante: 0.8, 
-    Trainee: 0.5, 
-    Junior: 0.15, 
+    Estudiante: 0.8,
+    Trainee: 0.5,
+    Junior: 0.15,
   };
 
   var valorTicket = 200;
@@ -57,41 +49,29 @@ function calcularTotal() {
     "Total a pagar: $" + total;
 }
 
-
 //--> Me fijo que la cantidad sea valida antes de calcular el total <--//
 
-document.getElementById("botonSubmit").addEventListener("click", function (e) 
-{
+document.getElementById("botonSubmit").addEventListener("click", function (e) {
   var cantidad = document.getElementById("inputCant").value;
 
-  if (isNaN(cantidad) || parseInt(cantidad, 10) <= 0) 
-  {
+  if (isNaN(cantidad) || parseInt(cantidad, 10) <= 0) {
     alert("La cantidad debe ser un número mayor que 0");
     e.preventDefault();
-  } 
-  else 
-  {
+  } else {
     calcularTotal();
   }
 });
 
-
 //--> Eventos para calcular total y resetear el formulario <--//
 
-  document.getElementById("botonSubmit").addEventListener("click", function (e) {
-   
-    e.preventDefault(); 
-   
-    calcularTotal(); 
- 
-  });
+document.getElementById("botonSubmit").addEventListener("click", function (e) {
+  e.preventDefault();
 
-  document.getElementById("botonReset").addEventListener("click", function () {
-
-      document.getElementById("inputCeleste").textContent = "Total a pagar: $0.00";
-      const inputName = document.getElementById('inputName');
-      inputName.focus();
-
+  calcularTotal();
 });
 
-
+document.getElementById("botonReset").addEventListener("click", function () {
+  document.getElementById("inputCeleste").textContent = "Total a pagar: $0.00";
+  const inputName = document.getElementById("inputName");
+  inputName.focus();
+});
