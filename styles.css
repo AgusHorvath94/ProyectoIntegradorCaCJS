@@ -112,9 +112,9 @@ h1.tituloPrincipal {
 }
 
 .honolulu {
-
-    height: 100%;
-    width: 102% !important;    
+    image-orientation: initial;
+    height: 500px;
+    width: 950px;    
 }
 
 .contenido {
@@ -298,11 +298,7 @@ footer {
     }
 
     p.descripcion {
-        width: 300px;
-    }
-
-    .contenido {
-        margin-top: -1rem !important;
+        width: 350px;
     }
 
 }
