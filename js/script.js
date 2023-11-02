@@ -56,13 +56,16 @@ document.getElementById("botonSubmit").addEventListener("click", function (e) {
 
   const inputName = document.getElementById("inputName");
   const inputSurname = document.getElementById("inputSurname");
+  const inputEmail = document.getElementById("inputEmail");
   const inputCant = document.getElementById("inputCant");
+
 
   const nombre = inputName.value.trim();
   const apellido = inputSurname.value.trim();
+  const email = inputEmail.value.trim();
   const cantidad = inputCant.value.trim();
 
-  if (nombre === "" || apellido === "" || cantidad === "") {
+  if (nombre === "" || apellido === "" || email === "" || cantidad === "") {
     alert(
       "Todos los campos son obligatorios. Por favor, complete todos los campos."
     );
