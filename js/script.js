@@ -55,7 +55,7 @@ document.getElementById("botonSubmit").addEventListener("click", function (e) {
   e.preventDefault();
 
   const inputName = document.getElementById("inputName");
-  const inputCategory = document.getElementById("inputSurname");
+  const inputSurname = document.getElementById("inputSurname");
   const inputCant = document.getElementById("inputCant");
 
   const nombre = inputName.value.trim();
