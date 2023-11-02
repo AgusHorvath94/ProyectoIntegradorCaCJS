@@ -49,14 +49,25 @@ function calcularTotal() {
     "Total a pagar: $" + total;
 }
 
-//--> Me fijo que la cantidad sea valida antes de calcular el total <--//
+//--> Me fijo que todos los campos esten completos y que la cantidad no sea cero <--//
 
 document.getElementById("botonSubmit").addEventListener("click", function (e) {
-  var cantidad = document.getElementById("inputCant").value;
+  e.preventDefault();
 
-  if (isNaN(cantidad) || parseInt(cantidad, 10) <= 0) {
+  const inputName = document.getElementById("inputName");
+  const inputCategory = document.getElementById("inputSurname");
+  const inputCant = document.getElementById("inputCant");
+
+  const nombre = inputName.value.trim();
+  const apellido = inputSurname.value.trim();
+  const cantidad = inputCant.value.trim();
+
+  if (nombre === "" || apellido === "" || cantidad === "") {
+    alert(
+      "Todos los campos son obligatorios. Por favor, complete todos los campos."
+    );
+  } else if (isNaN(cantidad) || parseInt(cantidad, 10) <= 0) {
     alert("La cantidad debe ser un número mayor que 0");
-    e.preventDefault();
   } else {
     calcularTotal();
   }
