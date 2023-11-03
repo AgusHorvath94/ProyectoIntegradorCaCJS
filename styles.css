@@ -1,9 +1,9 @@
-
 /*Styles pagina principal*/
 
 * { 
     margin: 0;
     padding: 0;
+  
 }
 
 #codoacodo {
@@ -112,9 +112,9 @@ h1.tituloPrincipal {
 }
 
 .honolulu {
-    image-orientation: initial;
-    height: 500px;
-    width: 950px;    
+
+    height: 100%;
+    width: 102% !important;    
 }
 
 .contenido {
@@ -298,7 +298,11 @@ footer {
     }
 
     p.descripcion {
-        width: 350px;
+        width: 300px;
+    }
+
+    .contenido {
+        margin-top: -1rem !important;
     }
 
 }
